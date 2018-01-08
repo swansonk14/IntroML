@@ -1,4 +1,5 @@
 # IntroML
+Kyle Swanson, swansonk@mit.edu
 
 ## Introduction
 Welcome to IntroML! This four week class will give you a brief, hands-on introduction to some of the most important topics in machine learning. There will be 11 classes in total, with each class consisting of a lecture on a topic followed by a hands-on lab where we will implement some of the machine learning algorithms discussed in lecture. Lecture and lab materials for each day will be released at the beginning of lecture. See below for a list of topics.
