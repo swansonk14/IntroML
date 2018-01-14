@@ -31,23 +31,23 @@ test_final_features = lab2.extract_final_features(test_texts, dictionary, bigram
 # Part 1 - Perceptron Algorithm
 #-------------------------------------------------------------------------------
 
-# toy_features, toy_labels = utils.load_toy_data('../../Data/toy_data.csv')
+toy_features, toy_labels = utils.load_toy_data('../../Data/toy_data.csv')
 
-# theta, theta_0 = lab2.perceptron(toy_features, toy_labels, T=5)
+theta, theta_0 = lab2.perceptron(toy_features, toy_labels, T=5)
 
-# utils.plot_toy_results(toy_features, toy_labels, theta, theta_0)
+utils.plot_toy_results(toy_features, toy_labels, theta, theta_0)
 
 #-------------------------------------------------------------------------------
 # Part 2 - Classifying Reviews
 #-------------------------------------------------------------------------------
 
-# theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T=5)
+theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T=5)
 
-# train_accuracy = lab2.accuracy(train_bow_features, train_labels, theta, theta_0)
-# val_accuracy = lab2.accuracy(val_bow_features, val_labels, theta, theta_0)
+train_accuracy = lab2.accuracy(train_bow_features, train_labels, theta, theta_0)
+val_accuracy = lab2.accuracy(val_bow_features, val_labels, theta, theta_0)
 
-# print("Training accuracy: {:.4f}".format(train_accuracy)) # 0.9850
-# print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.8943
+print("Training accuracy: {:.4f}".format(train_accuracy)) # 0.9850
+print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.8943
 
 #-------------------------------------------------------------------------------
 # Part 3 - Improving the Model
@@ -57,11 +57,11 @@ test_final_features = lab2.extract_final_features(test_texts, dictionary, bigram
 # Part 3.1 - Tuning the Hyperparameters
 #-------------------------------------------------------------------------------
 
-# Ts = [1, 5, 10, 15, 20]
+Ts = [1, 5, 10, 15, 20]
 
-# train_accs, val_accs = lab2.tune(Ts, train_bow_features, train_labels, val_bow_features, val_labels)
+train_accs, val_accs = lab2.tune(Ts, train_bow_features, train_labels, val_bow_features, val_labels)
 
-# utils.plot_tune_results(Ts, train_accs, val_accs)
+utils.plot_tune_results(Ts, train_accs, val_accs)
 
 #-------------------------------------------------------------------------------
 # Best T value
@@ -73,50 +73,53 @@ T_best = 10
 # Part 3.2 - Understanding the Model
 #-------------------------------------------------------------------------------
 
-# theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T_best)
+theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T_best)
 
-# word_list = sorted(dictionary.keys(), key=lambda word: dictionary[word])
-# sorted_words = utils.most_explanatory_words(theta, word_list)
+word_list = sorted(dictionary.keys(), key=lambda word: dictionary[word])
+sorted_words = utils.most_explanatory_words(theta, word_list)
 
-# print("Top 10 most explanatory words")
-# print(sorted_words[:10])
+print()
+print("Top 10 most explanatory words")
+print(sorted_words[:10])
 
-# # ['delicious', 'excellent', 'organic', 'perfect', 'love', 'wonderful', 'awesome', 'best', 'cat', 'amazing']
+# ['delicious', 'excellent', 'organic', 'perfect', 'love', 'wonderful', 'awesome', 'best', 'cat', 'amazing']
 
 #-------------------------------------------------------------------------------
 # Part 3.3 - Adding Features
 #-------------------------------------------------------------------------------
 
-# theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T_best)
+theta, theta_0 = lab2.perceptron(train_bow_features, train_labels, T_best)
 
-# train_accuracy = lab2.accuracy(train_bow_features, train_labels, theta, theta_0)
-# val_accuracy = lab2.accuracy(val_bow_features, val_labels, theta, theta_0)
+train_accuracy = lab2.accuracy(train_bow_features, train_labels, theta, theta_0)
+val_accuracy = lab2.accuracy(val_bow_features, val_labels, theta, theta_0)
 
-# print("Bag-of-words features")
-# print("Training accuracy: {:.4f}".format(train_accuracy)) # 0.9985
-# print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.8943
+print()
+print("Bag-of-words features")
+print("Training accuracy: {:.4f}".format(train_accuracy)) # 0.9985
+print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.8943
 
-# print()
+print()
 
-# theta, theta_0 = lab2.perceptron(train_final_features, train_labels, T_best)
+theta, theta_0 = lab2.perceptron(train_final_features, train_labels, T_best)
 
-# train_accuracy = lab2.accuracy(train_final_features, train_labels, theta, theta_0)
-# val_accuracy = lab2.accuracy(val_final_features, val_labels, theta, theta_0)
+train_accuracy = lab2.accuracy(train_final_features, train_labels, theta, theta_0)
+val_accuracy = lab2.accuracy(val_final_features, val_labels, theta, theta_0)
 
-# print("Custom features")
-# print("Training accuracy: {:.4f}".format(train_accuracy)) # 1.0000
-# print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.9029
+print("Custom features")
+print("Training accuracy: {:.4f}".format(train_accuracy)) # 1.0000
+print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.9029
 
 #-------------------------------------------------------------------------------
 # Part 4 - Testing the Model
 #-------------------------------------------------------------------------------
 
-# theta, theta_0 = lab2.perceptron(train_final_features, train_labels, T_best)
+theta, theta_0 = lab2.perceptron(train_final_features, train_labels, T_best)
 
-# train_accuracy = lab2.accuracy(train_final_features, train_labels, theta, theta_0)
-# val_accuracy = lab2.accuracy(val_final_features, val_labels, theta, theta_0)
-# test_accuracy = lab2.accuracy(test_final_features, test_labels, theta, theta_0)
+train_accuracy = lab2.accuracy(train_final_features, train_labels, theta, theta_0)
+val_accuracy = lab2.accuracy(val_final_features, val_labels, theta, theta_0)
+test_accuracy = lab2.accuracy(test_final_features, test_labels, theta, theta_0)
 
-# print("Training accuracy: {:.4f}".format(train_accuracy)) # 1.0000
-# print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.9029
-# print("Test accuracy: {:.4f}".format(test_accuracy)) # 0.8829
+print()
+print("Training accuracy: {:.4f}".format(train_accuracy)) # 1.0000
+print("Validation accuracy: {:.4f}".format(val_accuracy)) # 0.9029
+print("Test accuracy: {:.4f}".format(test_accuracy)) # 0.8829
