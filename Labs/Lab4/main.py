@@ -18,9 +18,9 @@ np.random.seed(0)
 X = np.random.randn(200, 2)
 
 # Assign labels based on different functionsgst
-y_linear = np.array([1 if x2 > 2 * x_i else -1 for x_i, x2 in X])
-y_quad = np.array([1 if x2 > 2 * x_i**2 - 1 else -1 for x_i, x2 in X])
-y_radial = np.array([1 if x_i**2 + x2**2 < 1 else -1 for x_i, x2 in X])
+y_linear = np.array([1 if x2 > 2 * x1 else -1 for x1, x2 in X])
+y_quad = np.array([1 if x2 > 2 * x1**2 - 1 else -1 for x1, x2 in X])
+y_radial = np.array([1 if x1**2 + x2**2 < 1 else -1 for x1, x2 in X])
 y_angular = np.array([1 if (np.arctan2(x[0], x[1]) > np.pi / 6 and np.arctan2(x[0], x[1]) < np.pi / 2) else -1 for x in X])
 
 # Plot the labelled data
