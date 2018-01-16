@@ -1,7 +1,7 @@
 # IntroML
-Kyle Swanson, swansonk@mit.edu
+Kyle Swanson: swansonk@mit.edu
 
-Telegram, https://t.me/ml_sdu_mit
+Telegram: https://t.me/ml_sdu_mit
 
 ## Introduction
 Welcome to IntroML! This four week class will give you a brief, hands-on introduction to some of the most important topics in machine learning. There will be 11 classes in total, with each class consisting of a lecture on a topic followed by a hands-on lab where we will implement some of the machine learning algorithms discussed in lecture. Lecture and lab materials for each day will be released at the beginning of lecture. See below for a list of topics.
@@ -14,9 +14,9 @@ Welcome to IntroML! This four week class will give you a brief, hands-on introdu
 * Wednesday: Maximum Margin Classifiers and Support Vector Machines
 
 ### Week 2
-* Monday: Kernels and Non-Linear Classifiers
-* Tuesday: Ensembles and Boosting
-* Wednesday: Content Recommendation via Collaborative Filtering
+* Monday: Non-Linear Classifiers and Kernels
+* Tuesday: Ensembles and the Random Forest Algorithm
+* Wednesday: Recommender Systems
 
 ### Week 3
 * Monday: Neural Networks I
