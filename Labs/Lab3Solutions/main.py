@@ -101,8 +101,8 @@ train_accuracy = metrics.accuracy_score(train_labels, train_predictions)
 val_predictions = pipeline.predict(val_texts)
 val_accuracy = metrics.accuracy_score(val_labels, val_predictions)
 
-print('SVM training accuracy = {}'.format(train_accuracy))
-print('SVM validation accuracy = {}'.format(val_accuracy))
+print('SVM training accuracy = {}'.format(train_accuracy)) # 1.0000
+print('SVM validation accuracy = {}'.format(val_accuracy)) # 0.8629
 
 #-------------------------------------------------------------------------------
 # Part 3 - Grid Search
@@ -127,5 +127,20 @@ print()
 for C, kernel, accuracy in zip(clf.cv_results_['param_svm__C'], clf.cv_results_['param_svm__kernel'], clf.cv_results_['mean_test_score']):
     print('C = {}, kernel = {}, accuracy = {}'.format(C, kernel, accuracy))
 
+"""
+C = 1.0, kernel = linear, accuracy = 0.858
+C = 1.0, kernel = poly, accuracy = 0.808
+C = 1.0, kernel = rbf, accuracy = 0.808
+C = 0.1, kernel = linear, accuracy = 0.8625
+C = 0.1, kernel = poly, accuracy = 0.808
+C = 0.1, kernel = rbf, accuracy = 0.808
+C = 0.01, kernel = linear, accuracy = 0.835
+C = 0.01, kernel = poly, accuracy = 0.808
+C = 0.01, kernel = rbf, accuracy = 0.808
+C = 0.0001, kernel = linear, accuracy = 0.808
+C = 0.0001, kernel = poly, accuracy = 0.808
+C = 0.0001, kernel = rbf, accuracy = 0.808
+"""
+
 print()
-print('Best: C = {}, kernel = {}, accuracy = {}'.format(clf.best_params_['svm__C'], clf.best_params_['svm__kernel'], clf.best_score_))
+print('Best: C = {}, kernel = {}, accuracy = {}'.format(clf.best_params_['svm__C'], clf.best_params_['svm__kernel'], clf.best_score_)) # C = 0.1, kernel = linear, accuracy = 0.8625

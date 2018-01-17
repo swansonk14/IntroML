@@ -86,7 +86,7 @@ def classify(feature_matrix, theta, theta_0=0):
         and theta_0.
     """
 
-    classifications = np.array([1 if np.dot(feature_vector, theta) + theta_0 > 0 else -1 for feature_vector in feature_matrix])
+    classifications = np.array([np.sign(np.dot(feature_vector, theta) + theta_0) for feature_vector in feature_matrix])
 
     return classifications
 

@@ -80,9 +80,7 @@ sorted_words = utils.most_explanatory_words(theta, word_list)
 
 print()
 print("Top 10 most explanatory words")
-print(sorted_words[:10])
-
-# ['delicious', 'excellent', 'organic', 'perfect', 'love', 'wonderful', 'awesome', 'best', 'cat', 'amazing']
+print(sorted_words[:10]) # ['delicious', 'excellent', 'organic', 'perfect', 'love', 'wonderful', 'awesome', 'best', 'cat', 'amazing']
 
 #-------------------------------------------------------------------------------
 # Part 3.3 - Adding Features
