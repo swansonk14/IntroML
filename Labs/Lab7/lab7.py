@@ -1,5 +1,3 @@
-# Partially based on http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
-
 import numpy as np
 from sklearn.metrics import accuracy_score
 
