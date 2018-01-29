@@ -42,8 +42,8 @@ model.fit(x_train, y_train,
 # Test model
 score = model.evaluate(x_test, y_test, verbose=0)
 print()
-print('Test loss = {}'.format(score[0]))
-print('Test accuracy = {}'.format(score[1]))
+print('Test loss = {}'.format(score[0])) # 0.0957
+print('Test accuracy = {}'.format(score[1])) # 0.9818
 
 # Visualize model after training
 utils.display_activation_maps(model, x_test[0], x_test[0].reshape(28, 28))
@@ -90,8 +90,8 @@ model.fit(x_train, y_train,
 # Test model
 score = model.evaluate(x_test, y_test, verbose=0)
 print()
-print('Test loss = {}'.format(score[0]))
-print('Test accuracy = {}'.format(score[1]))
+print('Test loss = {}'.format(score[0])) # 0.0400
+print('Test accuracy = {}'.format(score[1])) # 0.9859
 
 # Visualize model after training
 utils.display_activation_maps(model, x_test[0], x_test[0][:,:,0])
