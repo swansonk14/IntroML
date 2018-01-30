@@ -177,11 +177,11 @@ Go into \texttt{lab10.py}. Your job is to implement the \texttt{build\_autoencod
 
 When your implementation is complete, go into \texttt{main.py} and uncomment Part 3.1.
 
-Before running the file, we're going to load a cool visualization tool called Tensorboard, which is provided by Tensorflow, the neural network package that keras uses in the backend. You can see in \texttt{main.py} that we're using \texttt{Tensorboard} when we're fitting the model in Part 3.1. To see the Tensorboard visualization, open a new terminal and type \texttt{tensorboard --log\_dir=/tmp/autoencoder}. Then open a web browser and navigate to \texttt{127.0.0.1:6006}. You'll see the Tensorboard visualization tool.
+Before running the file, we're going to load a cool visualization tool called Tensorboard, which is provided by Tensorflow, the neural network package that keras uses in the backend. You can see in \texttt{main.py} that we're using \texttt{Tensorboard} when we're fitting the model in Part 3.1. To see the Tensorboard visualization, open a new terminal and type \texttt{tensorboard --logdir=/tmp/autoencoder}. Then open a web browser and navigate to \texttt{127.0.0.1:6006}. You'll see the Tensorboard visualization tool.
 
 Now, in your first terminal window, run \texttt{python main.py}. While the model trains, look at the Tensorboard visualization. Click on the ``Graphs" tab to see a visualization of the autoencoder architecture. Click on the ``Scalars" tab to see a real-time visualization of the loss of the model. You should see the loss go down as the model trains.
 
-(If you like the visualization, you can use Tensorboard in Parts 3.2 and 3.3 as well, though you should use \texttt{tensorboard --log\_dir=/tmp/denoising} for Part 3.2 and \texttt{tensorboard --log\_dir=/tmp/vae} for Part 3.3.)
+(If you like the visualization, you can use Tensorboard in Parts 3.2 and 3.3 as well, though you should use \texttt{tensorboard --logdir=/tmp/denoising} for Part 3.2 and \texttt{tensorboard --logdir=/tmp/vae} for Part 3.3.)
 
 After training is complete, you'll see an image with two rows of digits. The top row shows the original images while the bottom row shows the reconstructions of the autoencoder. Even though the autoencoder compressed the original 784-dimensional image (28x28 pixels) into a 32-dimensional vector (the \texttt{encoding\_dim}), which is a compression factor of 24.5, the autoencoder was still able to build a good reconstruction of the image.
 
