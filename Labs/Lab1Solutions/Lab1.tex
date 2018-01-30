@@ -65,7 +65,7 @@ If you don't want to use Anaconda, you may install Python directly from \url{htt
 
 \subsection{Python Packages}
 
-In addition to Python, we need to install some relevant Python packages. If you installed Python with Anaconda, you only need to install \texttt{keras}. If you installed Python without Anaconda, you need to install all of the following packages. Packages can be installed with the Python Package Index (\url{https://pypi.python.org/pypi/pip}) by running
+In addition to Python, we need to install some relevant Python packages. If you installed Python with Anaconda, you only need to install \texttt{keras}, \texttt{tensorflow}, and \texttt{gym}. If you installed Python without Anaconda, you need to install all of the following packages. Packages can be installed with the Python Package Index (\url{https://pypi.python.org/pypi/pip}) by running
 
 \vspace{2mm}
 \texttt{pip install <package-name>}
@@ -81,6 +81,8 @@ where \texttt{<package-name>} is replaced with each of the following package nam
 	\item \texttt{pillow} - Image processing
 	\item \texttt{matplotlib} - Plotting
 	\item \texttt{keras} - Deep learning
+	\item \texttt{tensorflow} - Deep learning
+	\item \texttt{gym} - Games for reinforcement learning
 \end{itemize}
 
 You can test these installations by opening a Python shell (just run the command \texttt{python} in the terminal) and then running \texttt{import <package-name>}. Note that to import \texttt{scikit-learn}, you should run the command \texttt{import sklearn}, and to import pillow, you should run \texttt{import PIL}. All other import names are the same as the package names.
